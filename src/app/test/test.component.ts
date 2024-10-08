@@ -3,29 +3,25 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  styleUrls: ['./test.component.css'],
 })
 export class TestComponent {
-  color : string="red";
-  titre : string="hello";
+  titre: string = 'Hello 4TWIN6';
+  color: string = "red";
   user={id:'',name:''}
-  product={
-    id:1,
-    name:"iphone",
-    price:10,
-    quantity:5,
-    image:"/assets/login.png"
+  product = {
+    id: 1,
+    name: 'phone',
+    price: 200,
+    quantity: 4,
+    imgsrc:'/assets/test.jpg'
+  };
 
+  acheter() {
+    this.product.quantity--;
   }
 
-  acheter(){
-this.product.quantity --
+  onColorChange(event: Event) {
+    this.color = (event.target as HTMLInputElement).value;
   }
-
-  onColorChange(event:Event){
-    this.color=(event.target as HTMLInputElement).value;
-  }
-
-
-
 }

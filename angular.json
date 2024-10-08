@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "project4twin6": {
+    "Project4TWIN6": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/project4twin6",
+            "outputPath": "dist/project4-twin6",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "project4twin6:build:production"
+              "browserTarget": "Project4TWIN6:build:production"
             },
             "development": {
-              "browserTarget": "project4twin6:build:development"
+              "browserTarget": "Project4TWIN6:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "project4twin6:build"
+            "browserTarget": "Project4TWIN6:build"
           }
         },
         "test": {
@@ -99,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "c5b5e69e-3e1f-4143-bcf2-4911895add05"
   }
 }
