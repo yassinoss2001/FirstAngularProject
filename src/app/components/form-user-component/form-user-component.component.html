@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+      <form #f="ngForm" (ngSubmit)="add(f)">
+     
+        <div class="mb-3">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="user.name"
+                 #firstName="ngModel" required minlength="3" pattern="[a-zA-Z]*">
+          <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)" class="alert alert-danger">
+            <div *ngIf="firstName.errors?.['required']">First name is required</div>
+            <div *ngIf="firstName.errors?.['minlength']">First name must have at least 3 characters</div>
+            <div *ngIf="firstName.errors?.['pattern']">First name must contain only letters</div>
+          </div>
+        </div>
+  
+       
+        <div class="mb-3">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="user.lastName"
+                 #lastName="ngModel" required minlength="3" pattern="[a-zA-Z]*">
+          <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)" class="alert alert-danger">
+            <div *ngIf="lastName.errors?.['required']">Last name is required</div>
+            <div *ngIf="lastName.errors?.['minlength']">Last name must have at least 3 characters</div>
+            <div *ngIf="lastName.errors?.['pattern']">Last name must contain only letters</div>
+          </div>
+        </div>
+  
+      
+        <div class="mb-3">
+          <label for="email">Email:</label>
+          <input type="email" id="email" class="form-control" name="email" [(ngModel)]="user.email"
+                 #email="ngModel" required pattern="^[a-zA-Z0-9._-]+@gmail.com">
+          <div *ngIf="email.invalid && (email.touched || email.dirty)" class="alert alert-danger">
+            <div *ngIf="email.errors?.['required']">Email is required</div>
+            <div *ngIf="email.errors?.['pattern']">Email must end with @gmail.com</div>
+          </div>
+        </div>
+  
+        
+       
+        <div class="mb-3">
+          <label for="password">Password:</label>
+          <input type="password" id="password" class="form-control" name="password" [(ngModel)]="user.password"
+                 #password="ngModel" required pattern="^[a-zA-Z0-9]{8,}">
+          <div *ngIf="password.invalid && (password.touched || password.dirty)" class="alert alert-danger">
+            <div *ngIf="password.errors?.['required']">Password is required</div>
+            <div *ngIf="password.errors?.['pattern']">Password must have at least 8 characters and contain letters and digits</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
